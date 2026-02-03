@@ -47,3 +47,15 @@ header nav a {
 header nav a:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
+header nav a:link,
+header nav a:visited {
+  color: #ffffff;
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+header nav a:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
