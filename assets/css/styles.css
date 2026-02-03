@@ -1,3 +1,54 @@
+/* --- Mejora visual general --- */
+body {
+  background-color: #f2f4f7;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px 60px;
+}
+
+main section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h3 {
+  margin-top: 18px;
+  font-size: 18px;
+}
+
+p, li {
+  line-height: 1.65;
+}
+
+/* --- Header fijo + navegación usable --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Evita que el título quede “tapado” al clicar en el menú */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Menú adaptable si hay muchos enlaces */
+header nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
