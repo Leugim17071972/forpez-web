@@ -59,3 +59,13 @@ header nav a:hover {
 header nav a:active {
   background-color: rgba(255, 255, 255, 0.4);
 }
+html {
+  scroll-behavior: smooth;
+}
+
+main section {
+  background-color: #ffffff;
+  padding: 18px 20px;
+  margin: 18px 0;
+  border-radius: 8px;
+}
