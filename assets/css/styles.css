@@ -1,19 +1,18 @@
 /* =========================
    BASE
 ========================= */
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
 
 body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f4f7;
+  background: #f2f4f7;
   color: #222;
 }
 
 /* =========================
-   LAYOUT PRINCIPAL
+   LAYOUT
 ========================= */
 main{
   max-width: 1100px;
@@ -22,114 +21,96 @@ main{
 }
 
 main section{
-  background-color: #fff;
+  background: #fff;
   border-radius: 10px;
   padding: 20px 22px;
   margin: 18px 0;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-h2{
-  margin-top: 0;
-  font-size: 22px;
-}
+h2{ margin-top: 0; font-size: 22px; }
+h3{ margin-top: 18px; font-size: 18px; }
+p, li{ line-height: 1.65; font-size: 16px; }
 
-h3{
-  margin-top: 18px;
-  font-size: 18px;
-}
-
-p, li{
-  line-height: 1.65;
-  font-size: 16px;
-}
-
-/* Evita que el título quede “tapado” al clicar en el menú */
-section{
-  scroll-margin-top: 120px; /* ajusta si cambias altura de header */
-}
+/* Para que los anclajes no queden ocultos tras el header */
+section{ scroll-margin-top: 140px; }
 
 /* =========================
-   HEADER (logo + menú)
-   Compatible con: <header><img><nav><a>...</a></nav></header>
+   HEADER (anti-desaparición)
 ========================= */
 header{
   position: sticky;
   top: 0;
   z-index: 1000;
 
+  background: #1f2933;
+  color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+
+  /* Clave: permitimos wrap del layout entero */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-
+  gap: 14px;
   padding: 12px 18px;
-  background: #1f2933;
-  color: #fff;
 
-  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  flex-wrap: wrap; /* <-- esto evita que el menú “se vaya” */
 }
 
 /* Logo */
 header img{
-  height: 80px;     /* tamaño logo desktop */
+  height: 72px;      /* AJUSTA: 60–90 */
   width: auto;
   display: block;
   object-fit: contain;
+  flex: 0 0 auto;
 }
 
-/* Menú */
+/* Nav: ocupa el ancho disponible y SIEMPRE se ve */
 header nav{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10px;
 
-  flex-wrap: wrap;          /* si no cabe, baja de línea */
+  flex: 1 1 520px;       /* <-- si no cabe al lado del logo, baja debajo */
+  justify-content: flex-end;
+
+  flex-wrap: wrap;       /* desktop: puede partir a 2 filas */
+  min-width: 280px;
+
+  /* “Plan B”: aunque sea largo, nunca desaparece */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Enlaces */
 header nav a,
 header nav a:link,
 header nav a:visited{
   color: #fff;
   text-decoration: none;
-
   font-size: 14px;
   font-weight: 600;
-
   padding: 7px 10px;
   border-radius: 10px;
-  white-space: nowrap;      /* no partir “Zinc electrolítico” */
+  white-space: nowrap;
 }
 
-header nav a:hover{
-  background: rgba(255,255,255,0.18);
-}
-
-header nav a:active{
-  background: rgba(255,255,255,0.28);
-}
+header nav a:hover{ background: rgba(255,255,255,0.18); }
+header nav a:active{ background: rgba(255,255,255,0.28); }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px){
   header{
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px 14px;
   }
-
   header img{
-    height: 62px;   /* tamaño logo móvil */
+    height: 58px;
   }
-
-  /* Menú en scroll horizontal para que no se rompa */
   header nav{
-    width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
     justify-content: flex-start;
+    flex-wrap: nowrap;     /* móvil: una sola fila */
   }
 }
