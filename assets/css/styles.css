@@ -57,13 +57,13 @@ header{
   flex-wrap: wrap; /* <-- esto evita que el menú “se vaya” */
 }
 
-/* Logo */
-header img{
-  height: 72px;      /* AJUSTA: 60–90 */
+.site-logo {
+  height: 72px;        /* más grande de lo que tenías */
   width: auto;
   display: block;
-  object-fit: contain;
-  flex: 0 0 auto;
+  background: #ffffff;
+  padding: 6px 10px;   /* aire alrededor */
+  border-radius: 4px; /* muy sutil */
 }
 
 /* Nav: ocupa el ancho disponible y SIEMPRE se ve */
