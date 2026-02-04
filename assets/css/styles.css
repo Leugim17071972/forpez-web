@@ -216,3 +216,69 @@ header nav a,
 header nav a:link,
 header nav a:visited { color: #111; }
 */
+/* ===== HOTFIX DEFINITIVO HEADER (pegar al final) ===== */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 12px 18px;
+  background: #1f2933;   /* fondo oscuro */
+  color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+}
+
+header img{
+  height: 80px;          /* sube/baja aquí el tamaño del logo */
+  width: auto;
+  display: block;
+}
+
+header nav{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header nav a,
+header nav a:link,
+header nav a:visited{
+  color: #fff !important;   /* evita que “se pierda” */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+header nav a:hover{
+  background: rgba(255,255,255,0.18);
+}
+
+/* Móvil: menú en scroll horizontal para que no reviente */
+@media (max-width: 900px){
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav{
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    justify-content: flex-start;
+  }
+
+  header img{
+    height: 62px;
+  }
+}
