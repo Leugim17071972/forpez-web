@@ -1,222 +1,58 @@
-/* --- Mejora visual general --- */
-body {
+/* =========================
+   BASE
+========================= */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #f2f4f7;
+  color: #222;
 }
 
-main {
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+main{
   max-width: 1100px;
   margin: 0 auto;
   padding: 28px 16px 60px;
 }
 
-main section {
-  background-color: #ffffff;
+main section{
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px 22px;
   margin: 18px 0;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-h2 {
+h2{
   margin-top: 0;
   font-size: 22px;
 }
 
-h3 {
+h3{
   margin-top: 18px;
   font-size: 18px;
 }
 
-p, li {
+p, li{
   line-height: 1.65;
-}
-
-/* --- Header fijo + navegación usable --- */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  font-size: 16px;
 }
 
 /* Evita que el título quede “tapado” al clicar en el menú */
-section {
-  scroll-margin-top: 90px;
+section{
+  scroll-margin-top: 120px; /* ajusta si cambias altura de header */
 }
 
-/* Menú adaptable si hay muchos enlaces */
-header nav {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
-}
-
-header {
-  background-color: #1f2933;
-  color: #ffffff;
-  padding: 20px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-main {
-  padding: 30px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-header nav {
-  display: flex;
-  gap: 14px;
-}
-
-header nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 4px;
-}
-
-header nav a:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-header nav a:link,
-header nav a:visited {
-  color: #ffffff;
-}
-
-header nav a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-header nav a:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-html {
-  scroll-behavior: smooth;
-}
-
-main section {
-  background-color: #ffffff;
-  padding: 18px 20px;
-  margin: 18px 0;
-  border-radius: 8px;
-}
-/* ================= HEADER ================= */
-
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-
-  padding: 10px 18px;
-}
-
-.brand{
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex: 0 0 auto;
-}
-
-.brand-logo{
-  height: 44px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.site-nav{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1 1 auto;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.site-nav a{
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
-
-.site-nav a:hover{
-  background: rgba(0,0,0,.06);
-}
-
-@media (max-width: 900px){
-  .site-header{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .site-nav{
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
-  }
-
-  .brand-logo{
-    height: 38px;
-  }
-}
-/* ====== HOTFIX HEADER (no borra nada) ====== */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-header img{
-  height: 80px !important;
-  width: auto !important;
-  display: block;
-}
-}
-header nav a,
-header nav a:link,
-header nav a:visited {
-  color: #fff;    /* si tu header es oscuro */
-}
-
-/* Si tu header es blanco, usa esto en su lugar:
-header nav a,
-header nav a:link,
-header nav a:visited { color: #111; }
-*/
-/* ===== HOTFIX DEFINITIVO HEADER (pegar al final) ===== */
+/* =========================
+   HEADER (logo + menú)
+   Compatible con: <header><img><nav><a>...</a></nav></header>
+========================= */
 header{
   position: sticky;
   top: 0;
@@ -228,47 +64,66 @@ header{
   gap: 18px;
 
   padding: 12px 18px;
-  background: #1f2933;   /* fondo oscuro */
+  background: #1f2933;
   color: #fff;
+
   box-shadow: 0 1px 6px rgba(0,0,0,0.12);
 }
 
+/* Logo */
 header img{
-  height: 80px;          /* sube/baja aquí el tamaño del logo */
+  height: 80px;     /* tamaño logo desktop */
   width: auto;
   display: block;
+  object-fit: contain;
 }
 
+/* Menú */
 header nav{
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
+  gap: 10px;
+
+  flex-wrap: wrap;          /* si no cabe, baja de línea */
 }
 
 header nav a,
 header nav a:link,
 header nav a:visited{
-  color: #fff !important;   /* evita que “se pierda” */
+  color: #fff;
   text-decoration: none;
+
   font-size: 14px;
   font-weight: 600;
-  padding: 6px 8px;
-  border-radius: 8px;
-  white-space: nowrap;
+
+  padding: 7px 10px;
+  border-radius: 10px;
+  white-space: nowrap;      /* no partir “Zinc electrolítico” */
 }
 
 header nav a:hover{
   background: rgba(255,255,255,0.18);
 }
 
-/* Móvil: menú en scroll horizontal para que no reviente */
+header nav a:active{
+  background: rgba(255,255,255,0.28);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px){
   header{
     flex-direction: column;
     align-items: flex-start;
   }
 
+  header img{
+    height: 62px;   /* tamaño logo móvil */
+  }
+
+  /* Menú en scroll horizontal para que no se rompa */
   header nav{
     width: 100%;
     flex-wrap: nowrap;
@@ -276,9 +131,5 @@ header nav a:hover{
     -webkit-overflow-scrolling: touch;
     padding-bottom: 6px;
     justify-content: flex-start;
-  }
-
-  header img{
-    height: 62px;
   }
 }
