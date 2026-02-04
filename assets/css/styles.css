@@ -199,14 +199,12 @@ header {
   justify-content: space-between;
   gap: 18px;
 }
-
-header img {
-  height: 68px;   /* tamaño logo */
-  width: auto;
+header img{
+  height: 80px !important;
+  width: auto !important;
   display: block;
-  object-fit: contain;
 }
-
+}
 header nav a,
 header nav a:link,
 header nav a:visited {
