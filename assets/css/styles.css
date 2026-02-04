@@ -210,7 +210,7 @@ header img {
 header nav a,
 header nav a:link,
 header nav a:visited {
-  color: #111;    /* si tu header es oscuro */
+  color: #fff;    /* si tu header es oscuro */
 }
 
 /* Si tu header es blanco, usa esto en su lugar:
