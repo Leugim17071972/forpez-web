@@ -192,3 +192,29 @@ main section {
     height: 38px;
   }
 }
+/* ====== HOTFIX HEADER (no borra nada) ====== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+header img {
+  height: 68px;   /* tamaño logo */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+header nav a,
+header nav a:link,
+header nav a:visited {
+  color: #111;    /* si tu header es oscuro */
+}
+
+/* Si tu header es blanco, usa esto en su lugar:
+header nav a,
+header nav a:link,
+header nav a:visited { color: #111; }
+*/
