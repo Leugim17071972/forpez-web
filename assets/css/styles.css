@@ -216,7 +216,8 @@ header nav a.active{
 
 .hero-image img{
   width: 100%;
-  height: auto;
+  max-width: 900px;   /* aquí mandas tú el tamaño real */
+  height: auto;       /* mantiene proporción 16:9 */
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   display: block;
