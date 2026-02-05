@@ -288,21 +288,19 @@ header nav a.active{
   }
 }
 /* =========================
-   IMÁGENES DE SECCIÓN (16:9, estilo hero)
-========================= */
-/* =========================
-   IMÁGENES DE SECCIÓN (igual tamaño que hero)
+   IMÁGENES DE SECCIÓN (mismo tamaño visual que la foto del hero)
 ========================= */
 .section-image{
-  margin: 18px auto 24px;
-  max-width: 520px;   /* ← MISMO ancho visual que la imagen del hero */
+  margin: 18px 0 24px;
 }
 
 .section-image img{
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  max-width: 520px !important;   /* AJUSTA aquí si quieres aún más pequeño */
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-  display: block;
 }
 
