@@ -287,33 +287,19 @@ header nav a.active{
     grid-template-columns: 1fr;
   }
 }
+
 /* =========================
-   IMÁGENES DE SECCIÓN
+   IMÁGENES DE SECCIÓN (estilo hero contenido)
 ========================= */
 .section-image{
-  margin: 16px 0 22px;
+  margin: 18px auto 24px;
+  max-width: 900px;          /* mismo ancho que el hero */
 }
 
 .section-image img{
   width: 100%;
-  height: auto;
+  max-height: 340px;         /* ← CLAVE: limita el impacto visual */
+  object-fit: cover;         /* recorta elegante, no deforma */
+  border-radius: 10px;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-}
-/* =========================
-   IMÁGENES DE SECCIÓN
-========================= */
-.section-image{
-  margin: 18px 0 22px;
-  text-align: center;
-}
-
-.section-image img{
-  width: 100%;
-  max-width: 680px;   /* ← ESTE es el tamaño “bueno” */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  display: inline-block;
 }
