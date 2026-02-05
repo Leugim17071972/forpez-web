@@ -287,19 +287,25 @@ header nav a.active{
     grid-template-columns: 1fr;
   }
 }
-
 /* =========================
-   IMÁGENES DE SECCIÓN (estilo hero contenido)
+   IMÁGENES DE SECCIÓN (sin recorte, estilo hero)
 ========================= */
 .section-image{
   margin: 18px auto 24px;
-  max-width: 900px;          /* mismo ancho que el hero */
+  max-width: 900px;
+}
+
+.section-image picture{
+  display: block;
 }
 
 .section-image img{
   width: 100%;
-  max-height: 280px;         /* ← CLAVE: limita el impacto visual */
-  object-fit: cover;         /* recorta elegante, no deforma */
+  height: 320px;            /* “tamaño hero” aproximado */
+  object-fit: contain;      /* NO recorta */
+  background: #fff;         /* relleno limpio si sobra espacio */
   border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
   display: block;
 }
+
