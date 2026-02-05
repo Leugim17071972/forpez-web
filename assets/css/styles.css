@@ -42,12 +42,15 @@ header{
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #ffffff;
-  background: #1f2933;
-  color: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
 
-  /* Clave: permitimos wrap del layout entero */
+  /* Fondo blanco real */
+  background: #ffffff;
+  color: #111;
+
+  /* Sombra sutil para separar del contenido */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  /* Layout */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,13 +60,16 @@ header{
   flex-wrap: wrap; /* <-- esto evita que el menú “se vaya” */
 }
 
-.site-logo {
-  height: 72px;        /* más grande de lo que tenías */
+/* Logo */
+.site-logo{
+  height: 72px;
   width: auto;
   display: block;
+
+  /* Como el JPG ya tiene blanco, lo dejamos integrado */
   background: #ffffff;
-  padding: 6px 10px;   /* aire alrededor */
-  border-radius: 4px; /* muy sutil */
+  padding: 6px 10px;
+  border-radius: 4px;
 }
 
 /* Nav: ocupa el ancho disponible y SIEMPRE se ve */
@@ -87,17 +93,29 @@ header nav{
 header nav a,
 header nav a:link,
 header nav a:visited{
-  color: #fff;
+  color: #111;                 /* negro */
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 7px 10px;
   border-radius: 10px;
   white-space: nowrap;
 }
 
-header nav a:hover{ background: rgba(255,255,255,0.18); }
-header nav a:active{ background: rgba(255,255,255,0.28); }
+/* Hover y activo (pensado para fondo blanco) */
+header nav a:hover{
+  background: rgba(0,0,0,0.06);
+}
+
+header nav a:active{
+  background: rgba(0,0,0,0.10);
+}
+
+/* (Opcional) Si quieres marcar el enlace activo cuando se hace click */
+header nav a.active{
+  color: #c40000;               /* rojo Forpez */
+  background: rgba(196,0,0,0.08);
+}
 
 /* =========================
    RESPONSIVE
@@ -106,9 +124,12 @@ header nav a:active{ background: rgba(255,255,255,0.28); }
   header{
     padding: 10px 14px;
   }
-  header img{
+
+  .site-logo{
     height: 58px;
+    padding: 5px 8px;
   }
+
   header nav{
     justify-content: flex-start;
     flex-wrap: nowrap;     /* móvil: una sola fila */
