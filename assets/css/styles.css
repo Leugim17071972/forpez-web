@@ -298,7 +298,7 @@ header nav a.active{
 
 .section-image img{
   width: 100%;
-  max-height: 340px;         /* ← CLAVE: limita el impacto visual */
+  max-height: 280px;         /* ← CLAVE: limita el impacto visual */
   object-fit: cover;         /* recorta elegante, no deforma */
   border-radius: 10px;
   display: block;
