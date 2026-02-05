@@ -301,3 +301,19 @@ header nav a.active{
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
+/* =========================
+   IMÁGENES DE SECCIÓN
+========================= */
+.section-image{
+  margin: 18px 0 22px;
+  text-align: center;
+}
+
+.section-image img{
+  width: 100%;
+  max-width: 680px;   /* ← ESTE es el tamaño “bueno” */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  display: inline-block;
+}
