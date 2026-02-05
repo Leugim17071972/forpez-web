@@ -33,76 +33,80 @@ h3{ margin-top: 18px; font-size: 18px; }
 p, li{ line-height: 1.65; font-size: 16px; }
 
 /* Para que los anclajes no queden ocultos tras el header */
-section{ scroll-margin-top: 140px; }
+section{ scroll-margin-top: 100px; }
 
 /* =========================
-   HEADER (anti-desaparición)
+   HEADER (compacto + robusto)
 ========================= */
+:root{
+  --brand-red: #c40000;
+}
+
 header{
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  /* Fondo blanco real */
   background: #ffffff;
   color: #111;
-
-  /* Sombra sutil para separar del contenido */
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 
-  /* Layout */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 12px 18px;
+  gap: 16px;
 
-  flex-wrap: wrap; /* <-- esto evita que el menú “se vaya” */
+  padding: 10px 18px;
+
+  /* Desktop: una sola fila */
+  flex-wrap: nowrap;
+}
+
+/* Brand */
+.brand{
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
 }
 
 /* Logo */
 .site-logo{
-  height: 72px;
+  height: 56px;              /* compacto y “industrial” */
   width: auto;
   display: block;
 
-  /* Como el JPG ya tiene blanco, lo dejamos integrado */
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 4px;
+  background: transparent;   /* tu JPG ya lleva blanco */
+  padding: 0;
+  border-radius: 0;
 }
 
-/* Nav: ocupa el ancho disponible y SIEMPRE se ve */
+/* Nav desktop */
 header nav{
   display: flex;
   align-items: center;
   gap: 10px;
 
-  flex: 1 1 520px;       /* <-- si no cabe al lado del logo, baja debajo */
+  flex: 1 1 auto;
   justify-content: flex-end;
 
-  flex-wrap: wrap;       /* desktop: puede partir a 2 filas */
-  min-width: 280px;
-
-  /* “Plan B”: aunque sea largo, nunca desaparece */
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+  overflow: visible;
 }
 
-/* Enlaces */
+/* Links */
 header nav a,
 header nav a:link,
 header nav a:visited{
-  color: #111;                 /* negro */
+  color: #111;
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  padding: 7px 10px;
+  padding: 8px 10px;
   border-radius: 10px;
   white-space: nowrap;
 }
 
-/* Hover y activo (pensado para fondo blanco) */
 header nav a:hover{
   background: rgba(0,0,0,0.06);
 }
@@ -111,30 +115,32 @@ header nav a:active{
   background: rgba(0,0,0,0.10);
 }
 
-/* (Opcional) Si quieres marcar el enlace activo cuando se hace click */
 header nav a.active{
-  color: #c40000;               /* rojo Forpez */
+  color: var(--brand-red);
   background: rgba(196,0,0,0.08);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* Responsive header */
 @media (max-width: 900px){
   header{
     padding: 10px 14px;
+    flex-wrap: wrap;         /* móvil: puede bajar nav */
   }
 
   .site-logo{
-    height: 58px;
-    padding: 5px 8px;
+    height: 44px;
   }
 
   header nav{
+    width: 100%;
     justify-content: flex-start;
-    flex-wrap: nowrap;     /* móvil: una sola fila */
+
+    /* móvil: si no cabe, scroll horizontal */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
+
 /* =========================
    HERO
 ========================= */
@@ -178,7 +184,7 @@ header nav a.active{
   content: "✔";
   position: absolute;
   left: 0;
-  color: #c40000; /* rojo Forpez */
+  color: #c40000;
   font-weight: bold;
 }
 
@@ -216,14 +222,14 @@ header nav a.active{
 
 .hero-image img{
   width: 100%;
-  max-width: 900px;   /* aquí mandas tú el tamaño real */
-  height: auto;       /* mantiene proporción 16:9 */
+  max-width: 900px;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   display: block;
 }
 
-/* Responsive */
+/* Responsive hero */
 @media (max-width: 900px){
   .hero{
     grid-template-columns: 1fr;
@@ -234,6 +240,7 @@ header nav a.active{
     font-size: 26px;
   }
 }
+
 /* =========================
    KPI CARDS (Procesos)
 ========================= */
