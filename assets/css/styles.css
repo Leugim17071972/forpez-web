@@ -290,9 +290,12 @@ header nav a.active{
 /* =========================
    IMÁGENES DE SECCIÓN (16:9, estilo hero)
 ========================= */
+/* =========================
+   IMÁGENES DE SECCIÓN (igual tamaño que hero)
+========================= */
 .section-image{
   margin: 18px auto 24px;
-  max-width: 900px;
+  max-width: 520px;   /* ← MISMO ancho visual que la imagen del hero */
 }
 
 .section-image img{
@@ -302,3 +305,4 @@ header nav a.active{
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
   display: block;
 }
+
