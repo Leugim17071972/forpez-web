@@ -234,3 +234,49 @@ header nav a.active{
     font-size: 26px;
   }
 }
+/* =========================
+   KPI CARDS (Procesos)
+========================= */
+.kpi-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0 10px;
+}
+
+.kpi{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.kpi-title{
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.kpi-value{
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.kpi-note{
+  font-size: 13px;
+  color: #444;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px){
+  .kpi-grid{
+    grid-template-columns: 1fr;
+  }
+}
