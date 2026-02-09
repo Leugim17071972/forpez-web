@@ -71,12 +71,11 @@ header{
 }
 
 /* Logo */
-.site-logo{ outline: 2px solid red; }
 .site-logo{
-  height: 72px;              /* SUBIMOS TAMAÑO REAL */
+  height: 100px;     /* ← tamaño definitivo desktop */
   width: auto;
   display: block;
-  object-fit: contain;       /* evita deformaciones */
+  object-fit: contain;
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -129,7 +128,7 @@ header nav a.active{
   }
 
   .site-logo{
-    height: 56px;            /* SUBIMOS TAMBIÉN EN MÓVIL */
+    height: 62px;            /* SUBIMOS TAMBIÉN EN MÓVIL */
   }
 
   header nav{
