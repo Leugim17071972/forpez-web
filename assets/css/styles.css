@@ -26,11 +26,37 @@ main section{
   padding: 20px 22px;
   margin: 18px 0;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+
+  /* NUEVO: separador sutil */
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-h2{ margin-top: 0; font-size: 22px; }
-h3{ margin-top: 18px; font-size: 18px; }
-p, li{ line-height: 1.65; font-size: 16px; }
+/* NUEVO: respiración entre secciones */
+main section + main section{
+  margin-top: 22px;
+}
+
+/* NUEVO: jerarquía/legibilidad */
+h2{
+  margin-top: 0;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+h3{
+  margin-top: 16px;
+  font-size: 19px;
+}
+p, li{
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* NUEVO: ancho de lectura (evita líneas eternas) */
+main section p,
+main section ul,
+main section ol{
+  max-width: 78ch;
+}
 
 /* Para que los anclajes no queden ocultos tras el header */
 section{ scroll-margin-top: 100px; }
@@ -72,7 +98,7 @@ header{
 
 /* Logo */
 .site-logo{
-  height: 100px;     /* ← tamaño definitivo desktop */
+  height: 100px;     /* tamaño definitivo desktop */
   width: auto;
   display: block;
   object-fit: contain;
@@ -120,6 +146,12 @@ header nav a.active{
   background: rgba(196,0,0,0.08);
 }
 
+/* NUEVO: accesibilidad/foco teclado */
+header nav a:focus-visible{
+  outline: 2px solid rgba(196,0,0,0.55);
+  outline-offset: 2px;
+}
+
 /* Responsive header */
 @media (max-width: 900px){
   header{
@@ -128,7 +160,7 @@ header nav a.active{
   }
 
   .site-logo{
-    height: 62px;            /* SUBIMOS TAMBIÉN EN MÓVIL */
+    height: 62px;            /* tamaño móvil */
   }
 
   header nav{
@@ -255,6 +287,14 @@ header nav a.active{
   border-radius: 12px;
   padding: 14px 14px 12px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+
+  /* NUEVO: interacción sutil */
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.kpi:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 .kpi-title{
@@ -285,10 +325,10 @@ header nav a.active{
     grid-template-columns: 1fr;
   }
 }
+
 /* =========================
    IMÁGENES DE SECCIÓN – UNA O VARIAS
 ========================= */
-
 .section-image{
   margin: 16px auto 22px;
   max-width: 720px;
@@ -313,5 +353,37 @@ header nav a.active{
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
+/* =========================
+   FOOTER (si lo añades en HTML)
+========================= */
+.site-footer{
+  background: #111;
+  color: #eee;
+  padding: 26px 16px;
+  margin-top: 34px;
+}
 
+.footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
+.site-footer a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 900px){
+  .footer-inner{
+    grid-template-columns: 1fr;
+  }
+}
