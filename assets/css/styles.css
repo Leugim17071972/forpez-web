@@ -294,11 +294,12 @@ header nav a.active{
 
 .section-image img{
   width: 100% !important;
-  max-width: 520px !important;   /* AJUSTA aquí si quieres aún más pequeño */
+  max-width: 520px !important;
   height: auto !important;
   margin: 0 auto !important;
   display: block !important;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
+
 
