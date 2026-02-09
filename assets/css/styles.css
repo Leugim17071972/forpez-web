@@ -288,6 +288,7 @@ header nav a.active{
 /* =========================
    IMÁGENES DE SECCIÓN – UNA O VARIAS
 ========================= */
+
 .section-image{
   margin: 16px auto 22px;
   max-width: 720px;
@@ -295,18 +296,22 @@ header nav a.active{
   gap: 14px;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;   /* permite bajar en móvil */
+  flex-wrap: wrap;
+}
+
+.section-image picture{
+  display: block;
+  width: 340px;       /* tamaño validado */
+  max-width: 100%;
 }
 
 .section-image img{
   width: 100%;
-  max-width: 340px;  /* MISMO TAMAÑO QUE HAS VALIDADO */
   height: auto;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
-
 
 
 
