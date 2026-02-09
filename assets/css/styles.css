@@ -286,20 +286,20 @@ header nav a.active{
   }
 }
 /* =========================
-   IMÁGENES DE SECCIÓN (mismo tamaño visual que la foto del hero)
+   IMÁGENES DE SECCIÓN – REDUCCIÓN 50 %
 ========================= */
 .section-image{
-  margin: 18px 0 24px;
+  margin: 16px auto 22px;
+  max-width: 340px;      /* ← tamaño definitivo */
 }
 
 .section-image img{
-  width: 100% !important;
-  max-width: 520px !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  display: block !important;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
+
 
 
