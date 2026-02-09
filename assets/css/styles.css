@@ -72,11 +72,11 @@ header{
 
 /* Logo */
 .site-logo{
-  height: 56px;              /* compacto y “industrial” */
+  height: 72px;              /* SUBIMOS TAMAÑO REAL */
   width: auto;
   display: block;
-
-  background: transparent;   /* tu JPG ya lleva blanco */
+  object-fit: contain;       /* evita deformaciones */
+  background: transparent;
   padding: 0;
   border-radius: 0;
 }
@@ -124,18 +124,16 @@ header nav a.active{
 @media (max-width: 900px){
   header{
     padding: 10px 14px;
-    flex-wrap: wrap;         /* móvil: puede bajar nav */
+    flex-wrap: wrap;
   }
 
   .site-logo{
-    height: 44px;
+    height: 56px;            /* SUBIMOS TAMBIÉN EN MÓVIL */
   }
 
   header nav{
     width: 100%;
     justify-content: flex-start;
-
-    /* móvil: si no cabe, scroll horizontal */
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
