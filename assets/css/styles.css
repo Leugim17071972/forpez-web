@@ -286,20 +286,27 @@ header nav a.active{
   }
 }
 /* =========================
-   IMÁGENES DE SECCIÓN – REDUCCIÓN 50 %
+   IMÁGENES DE SECCIÓN – UNA O VARIAS
 ========================= */
 .section-image{
   margin: 16px auto 22px;
-  max-width: 340px;      /* ← tamaño definitivo */
+  max-width: 720px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;   /* permite bajar en móvil */
 }
 
 .section-image img{
   width: 100%;
+  max-width: 340px;  /* MISMO TAMAÑO QUE HAS VALIDADO */
   height: auto;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
+
 
 
 
