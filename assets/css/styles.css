@@ -72,7 +72,7 @@ header{
 
 /* Logo */
 .site-logo{
-  height: 72px;              /* SUBIMOS TAMAÑO REAL */
+  height: 96px;              /* SUBIMOS TAMAÑO REAL */
   width: auto;
   display: block;
   object-fit: contain;       /* evita deformaciones */
