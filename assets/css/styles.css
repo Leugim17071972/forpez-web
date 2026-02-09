@@ -71,6 +71,7 @@ header{
 }
 
 /* Logo */
+.site-logo{ outline: 2px solid red; }
 .site-logo{
   height: 72px;              /* SUBIMOS TAMAÑO REAL */
   width: auto;
