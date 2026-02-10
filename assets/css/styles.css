@@ -50,7 +50,19 @@ p, li{
   line-height: 1.65;
   font-size: 16px;
 }
+/* =========================
+   TEXTO JUSTIFICADO (AQUÍ)
+========================= */
+main section p,
+main section li{
+  text-align: justify;
+  text-justify: inter-word;
+}
 
+/* ayuda al justificado (muy importante) */
+main section{
+  hyphens: auto;
+}
 /* NUEVO: ancho de lectura (evita líneas eternas) */
 main section p,
 main section ul,
